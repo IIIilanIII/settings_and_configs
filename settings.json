@@ -1,0 +1,170 @@
+{
+  // --- EDITOR TYPOGRAPHY & FONT CONFIGURATION ---
+  "editor.fontFamily": "'Atkinson Hyperlegible Mono', monospace",
+  "editor.fontSize": 15,
+  "editor.fontWeight": "400",
+  "editor.lineHeight": 22.5, // 1.5x ergonomic leading multiplier (15 * 1.5)
+  "editor.letterSpacing": 0.3, // ~+0.02em tracking expansion
+  "editor.fontLigatures": "'calt', 'liga', 'zero'",
+  // --- LAYOUT, SCOPE & CLUTTER REDUCTION ---
+  "editor.tabSize": 4, // 4-space indentation
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "off",
+  "editor.minimap.enabled": false, // Hides minimap clutter
+  "editor.renderWhitespace": "selection", // Shows whitespace ONLY when selected
+  "editor.stickyScroll.enabled": true, // Pins function headers during scroll
+  "editor.guides.indentation": true, // Enables clean vertical indent lines
+  "editor.formatOnSave": true, // Auto-formats code instantly upon saving
+  "editor.smoothScrolling": true,
+  // --- DISABLE NATIVE AI INLINE NOISE ---
+  "editor.inlineSuggest.enabled": false,
+  // --- BRACKET PAIR COLORIZATION & GUIDES ---
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active", // Active scope guide lines only
+  // --- SYSTEM THEME AUTO-SYNC (WINDOWS / OS SCHEDULING) ---
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  // --- FULL-FRAME DARK THEME & SUBTLE INDENT COLORS ---
+  "workbench.colorCustomizations": {
+    // Editor Canvas & Text
+    "editor.background": "#1E1E24",
+    "editor.foreground": "#D4D4D4",
+    "editorLineNumber.foreground": "#50505A",
+    "editorLineNumber.activeForeground": "#A0A0AB",
+    "editor.selectionBackground": "#2D2D38",
+    "editor.lineHighlightBackground": "#25252E",
+    // Subtle Indent Guide Colors (Low saturation, zero visual drag)
+    "editorIndentGuide.background1": "#2A2A32",
+    "editorIndentGuide.activeBackground1": "#50505A",
+    // Full IDE Frame / Chrome Colors (Sidebar, Title, Status Bar)
+    "sideBar.background": "#18181E",
+    "sideBar.foreground": "#D4D4D4",
+    "sideBarHeader.foreground": "#A0A0AB",
+    "sideBar.border": "#25252E",
+    "activityBar.background": "#141418",
+    "activityBar.foreground": "#D4D4D4",
+    "activityBar.border": "#25252E",
+    "statusBar.background": "#141418",
+    "statusBar.foreground": "#D4D4D4",
+    "titleBar.activeBackground": "#18181E",
+    "titleBar.activeForeground": "#D4D4D4",
+    "panel.background": "#18181E",
+    "panelHeaderTitle.foreground": "#D4D4D4",
+    // Muted Bracket Guide Colors
+    "editorBracketHighlight.foreground1": "#8B95A5",
+    "editorBracketHighlight.foreground2": "#A3B899",
+    "editorBracketHighlight.foreground3": "#D4A574",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#D55E00",
+    // Diagnostic Underlines & Error Highlights
+    "editorError.foreground": "#D55E00",
+    "editorWarning.foreground": "#E69F00",
+    "editorInfo.foreground": "#0072B2",
+  },
+  // --- SYNTAX HIGHLIGHTING & SEMANTIC FORMATTING RULES ---
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Comments & Docstrings (True Cursive Italic Layering)",
+        "scope": [
+          "comment",
+          "punctuation.definition.comment"
+        ],
+        "settings": {
+          "foreground": "#787885",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Keywords & Control Flow (Uniwidth Semi-Bold Mapping)",
+        "scope": [
+          "keyword",
+          "keyword.control",
+          "storage.type",
+          "storage.modifier"
+        ],
+        "settings": {
+          "foreground": "#CC79A7",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "name": "Function Definitions (Okabe-Ito Blue)",
+        "scope": [
+          "entity.name.function",
+          "support.function"
+        ],
+        "settings": {
+          "foreground": "#0072B2",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "name": "Function Calls & Methods (Okabe-Ito Sky Blue)",
+        "scope": [
+          "meta.function-call",
+          "variable.function"
+        ],
+        "settings": {
+          "foreground": "#56B4E9"
+        }
+      },
+      {
+        "name": "Strings & Literals (Okabe-Ito Bluish Green)",
+        "scope": [
+          "string",
+          "punctuation.definition.string"
+        ],
+        "settings": {
+          "foreground": "#009E73"
+        }
+      },
+      {
+        "name": "Numbers & Constants (Okabe-Ito Orange)",
+        "scope": [
+          "constant.numeric",
+          "constant.language",
+          "constant.character",
+          "constant.other"
+        ],
+        "settings": {
+          "foreground": "#E69F00"
+        }
+      },
+      {
+        "name": "Types & Classes (Okabe-Ito Yellow)",
+        "scope": [
+          "entity.name.type",
+          "entity.name.class",
+          "support.type",
+          "support.class"
+        ],
+        "settings": {
+          "foreground": "#F0E442"
+        }
+      },
+      {
+        "name": "Variables & Parameters (Baseline Off-White Foreground)",
+        "scope": [
+          "variable",
+          "variable.other",
+          "variable.parameter"
+        ],
+        "settings": {
+          "foreground": "#D4D4D4"
+        }
+      },
+      {
+        "name": "Syntax Errors (Strict Vermilion Underline)",
+        "scope": [
+          "invalid",
+          "invalid.illegal"
+        ],
+        "settings": {
+          "foreground": "#D55E00",
+          "fontStyle": "underline"
+        }
+      }
+    ]
+  }
+}
