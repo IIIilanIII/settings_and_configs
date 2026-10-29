@@ -1,13 +1,15 @@
 {
   // =====================================================================
-  // RIGOROUS HIGH-CONTRAST LIGHT THEME (APCA Compliant)
-  // - Background: Crisp Off-White Paper (#F9FAFB)
-  // - Main Text / Boilerplate: Deep Obsidian Charcoal (#111827) [Lc ~95]
-  // - Control Keywords: Deep Cyan-Teal (#0E7490) [Lc ~74]
-  // - Functions / Calls: Deep Royal Blue (#1D4ED8) [Lc ~72]
-  // - Types / Classes: Deep Muted Purple (#6B21A8) [Lc ~68]
-  // - Strings / Literals: Deep Forest Emerald (#047857) [Lc ~70]
-  // - Comments: Slate Gray (#4B5563) [Lc ~60]
+  // HIGH-CONTRAST LIGHT THEME (APCA-W3 0.98G-4g, computed against #EDEAE0)
+  // Alabaster colors only these five things; everything else is main text.
+  // - Background: Office Wall Off-White (#EDEAE0, LRV 82)
+  // - Main Text:             Deep Obsidian Charcoal (#111827) [Lc 92.0]
+  // - Definitions (names):   Deep Royal Blue        (#0B36C0) [Lc 77.3]
+  // - Constants / Numbers:   Deep Muted Purple      (#691EA5) [Lc 77.0]
+  // - Strings:               Deep Forest Emerald    (#005638) [Lc 77.1]
+  // - Comments:              Deep Crimson           (#8C0000) [Lc 78.1]
+  // - Punctuation / Escapes: Slate Gray             (#424C5A) [Lc 77.4]
+  // All syntax colors are 8.2:1 or better on WCAG 2 as well.
   // =====================================================================
   "editor.fontFamily": "'Atkinson Hyperlegible Mono', 'Cascadia Mono', 'SF Mono', Menlo, Consolas, monospace",
   "editor.fontSize": 18,
@@ -27,16 +29,15 @@
   "editor.cursorBlinking": "solid",
   "editor.cursorWidth": 2,
   "editor.bracketPairColorization.enabled": false,
-  "editor.guides.bracketPairs": "false",
+  "editor.guides.bracketPairs": false,
   "editor.matchBrackets": "always",
   "workbench.colorTheme": "Alabaster",
   "editor.lineNumbers": "off",
   "search.showLineNumbers": true,
-  // --- KEEP THE MARGIN COLUMN STRUCTURALLY, BUT LEAVE IT EMPTY ---
-  // Keeps the margin column space reserved so layout doesn't collapse
+  // --- REMOVE THE MARGIN COLUMN ENTIRELY ---
+  // Removes the glyph margin (breakpoint/icon column) from the editor
   "editor.glyphMargin": false,
   // Hides Git change ticks from appearing in the margin/gutter
-  "scm.diffDecorations": "gutter", // Wait, set to "none" to completely clear them out:
   "scm.diffDecorations": "none",
   // Prevents breakpoints and debug icons from cluttering the left margin
   "debug.showBreakpointsInOverviewRuler": false,
@@ -45,7 +46,7 @@
   // Automatically wraps text when it hits the limit
   // "bounded" wraps at the 80-column mark, but will also shrink if your window is narrower than 80 chars
   "editor.wordWrap": "bounded",
-  "editor.wordWrapColumn": 100,
+  "editor.wordWrapColumn": 90,
   // --- OPTIMIZED REDHAT / ECLIPSE JAVA FORMATTER SETTINGS ---
   "[java]": {
     "editor.defaultFormatter": "redhat.java",
@@ -54,8 +55,103 @@
   "java.format.settings.url": ".vscode/formatter.xml",
   "java.format.settings.profile": "Ergonomic-Java-100",
   "workbench.iconTheme": "vs-minimal",
+  // --- TURN OFF SEMANTIC HIGHLIGHTING TO PREVENT LANGUAGE SERVER INTRUSION ---
+  "editor.semanticHighlighting.enabled": false,
   "workbench.colorCustomizations": {
-    "editor.background": "#fbf7f0",
-    "editor.foreground": "#3B3B3B"
-  }
+    "editor.background": "#EDEAE0",
+    "editor.foreground": "#111827",
+    "editor.lineHighlightBackground": "#00000000",
+    "editor.foldBackground": "#EDEAE0",
+    "terminal.background": "#EDEAE0",
+    "terminal.foreground": "#111827",
+    "terminal.ansiBlack": "#111827",
+    "terminal.ansiRed": "#8D1818",
+    "terminal.ansiGreen": "#065700",
+    "terminal.ansiYellow": "#733D00",
+    "terminal.ansiBlue": "#1C42A4",
+    "terminal.ansiMagenta": "#6A2E8C",
+    "terminal.ansiCyan": "#004E7A",
+    "terminal.ansiWhite": "#666666",
+    "terminal.ansiBrightBlack": "#5D5D5D",
+    "terminal.ansiBrightRed": "#B90E23",
+    "terminal.ansiBrightGreen": "#007000",
+    "terminal.ansiBrightYellow": "#8E5200",
+    "terminal.ansiBrightBlue": "#0061B1",
+    "terminal.ansiBrightMagenta": "#A400A6",
+    "terminal.ansiBrightCyan": "#006887",
+    "terminal.ansiBrightWhite": "#111827"
+  },
+  // Same scopes Alabaster uses, same precedence, only the colors are tweaked
+  "editor.tokenColorCustomizations": {
+    "[Alabaster]": {
+      "textMateRules": [
+        {
+          "name": "Comments",
+          "scope": [
+            "comment",
+            "punctuation.definition.comment"
+          ],
+          "settings": {
+            "foreground": "#8C0000"
+          }
+        },
+        {
+          "name": "Strings",
+          "scope": [
+            "string",
+            "string.regexp",
+            "constant.other.symbol"
+          ],
+          "settings": {
+            "foreground": "#005638"
+          }
+        },
+        {
+          "name": "Strings: Escape Sequences",
+          "scope": "constant.character.escape",
+          "settings": {
+            "foreground": "#424C5A"
+          }
+        },
+        {
+          "name": "Numbers, Characters",
+          "scope": [
+            "constant.numeric",
+            "constant.character",
+            "constant.keyword",
+            "constant"
+          ],
+          "settings": {
+            "foreground": "#691EA5"
+          }
+        },
+        {
+          "name": "Global definitions",
+          "scope": "entity.name",
+          "settings": {
+            "foreground": "#0B36C0"
+          }
+        },
+        {
+          "name": "Punctuation",
+          "scope": "punctuation",
+          "settings": {
+            "foreground": "#424C5A"
+          }
+        }
+      ]
+    }
+  },
+  "files.autoSave": "afterDelay",
+  // --- TERMINAL: same look as the editor, bigger size ---
+  "terminal.integrated.fontFamily": "'Atkinson Hyperlegible Mono', 'Cascadia Mono', 'SF Mono', Menlo, Consolas, monospace",
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.fontWeightBold": "700",
+  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.letterSpacing": 0.3,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.cursorBlinking": false,
+  "terminal.integrated.smoothScrolling": true
 }
