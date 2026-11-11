@@ -1,4 +1,6 @@
 {
+"update.mode": "none",
+  
   // =====================================================================
   // HIGH-CONTRAST LIGHT THEME (APCA-W3 0.98G-4g, computed against #EDEAE0)
   // Alabaster colors only these five things; everything else is main text.
@@ -46,7 +48,7 @@
   // Automatically wraps text when it hits the limit
   // "bounded" wraps at the 80-column mark, but will also shrink if your window is narrower than 80 chars
   "editor.wordWrap": "bounded",
-  "editor.wordWrapColumn": 90,
+  "editor.wordWrapColumn": 80,
   // --- OPTIMIZED REDHAT / ECLIPSE JAVA FORMATTER SETTINGS ---
   "[java]": {
     "editor.defaultFormatter": "redhat.java",
@@ -153,5 +155,10 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 2,
   "terminal.integrated.cursorBlinking": false,
-  "terminal.integrated.smoothScrolling": true
+  "terminal.integrated.smoothScrolling": true,
+  "remote.SSH.remotePlatform": {
+    "100.101.17.52": "linux"
+  },
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  "workbench.editor.centeredLayoutAutoResize": false,
 }
